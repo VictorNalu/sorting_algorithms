@@ -2,7 +2,7 @@
 
 ## Tasks
 
-> Bubble Sort
+> Bubble Sort:
     - Write a function that sorts an array of integers in ascending order using the Bubble sort algorithm
 Prototype: void bubble_sort(int *array, size_t size);
 You’re expected to print the array after each time you swap two elements (See example below)
@@ -12,7 +12,7 @@ in the average case
 in the worst case
     File: 0-bubble_sort.c, 0-O
 
-> Insertion Sort
+> Insertion Sort:
     - Write a function that sorts a doubly linked list of integers in ascending order using the Insertion sort algorithm
 
 Prototype: void insertion_sort_list(listint_t **list);
@@ -25,7 +25,7 @@ in the average case
 in the worst case
     File: 1-insertion_sort_list.c, 1-O
 
-> Selection Sort
+> Selection Sort:
     Write a function that sorts an array of integers in ascending order using the Selection sort algorithm
 
 Prototype: void selection_sort(int *array, size_t size);
@@ -37,7 +37,7 @@ in the average case
 in the worst case
     File: 2-selection_sort.c, 2-O
 
-> Quick Sort
+> Quick Sort:
     Write a function that sorts an array of integers in ascending order using the Quick sort algorithm
 
 Prototype: void quick_sort(int *array, size_t size);
@@ -51,7 +51,7 @@ in the average case
 in the worst case
     File: 3-quick_sort.c, 3-O
 
-> Shell Sort -Knuth Sequence
+> Shell Sort -Knuth Sequence:
     Write a function that sorts an array of integers in ascending order using the Shell sort algorithm, using the Knuth sequence
 
 Prototype: void shell_sort(int *array, size_t size);
@@ -62,7 +62,7 @@ You’re expected to print the array each time you decrease the interval (See ex
 No big O notations of the time complexity of the Shell sort (Knuth sequence) algorithm needed - as the complexity is dependent on the size of array and gap
     File: 100-shell_sort.c
 
-> Cocktail shaker Sort
+> Cocktail shaker Sort:
     Write a function that sorts a doubly linked list of integers in ascending order using the Cocktail shaker sort algorithm
 
 Prototype: void cocktail_sort_list(listint_t **list);
@@ -75,7 +75,7 @@ in the average case
 in the worst case
     File: 101-cocktail_sort_list.c, 101-O
 
-> Counting Sort
+> Counting Sort:
     Write a function that sorts an array of integers in ascending order using the Counting sort algorithm
 
 Prototype: void counting_sort(int *array, size_t size);
@@ -89,7 +89,7 @@ in the average case
 in the worst case
     File: 102-counting_sort.c, 102-O
 
-> Merge Sort
+> Merge Sort:
     Write a function that sorts an array of integers in ascending order using the Merge sort algorithm
 
 Prototype: void merge_sort(int *array, size_t size);
@@ -106,7 +106,7 @@ in the average case
 in the worst case
     File: 103-merge_sort.c, 103-O
 
-> Heap Sort
+> Heap Sort:
     Write a function that sorts an array of integers in ascending order using the Heap sort algorithm
 
 Prototype: void heap_sort(int *array, size_t size);
@@ -119,7 +119,7 @@ in the average case
 in the worst case
     File: 104-heap_sort.c, 104-O
 
-> Radix Sort
+> Radix Sort:
     Write a function that sorts an array of integers in ascending order using the Radix sort algorithm
 
 Prototype: void radix_sort(int *array, size_t size);
@@ -129,7 +129,7 @@ You are allowed to use malloc and free for this task
 You’re expected to print the array each time you increase your significant digit (See example below)
     File: 105-radix_sort.c
 
-> Bitonic Sort
+> Bitonic Sort:
     Write a function that sorts an array of integers in ascending order using the Bitonic sort algorithm
 
 Prototype: void bitonic_sort(int *array, size_t size);
@@ -144,7 +144,7 @@ in the average case
 in the worst case
     File: 106-bitonic_sort.c, 106-O
 
-> Quick Sort - Hoare Partition Scheme
+> Quick Sort - Hoare Partition Scheme:
     Write a function that sorts an array of integers in ascending order using the Quick sort algorithm
 
 Prototype: void quick_sort_hoare(int *array, size_t size);
@@ -158,7 +158,7 @@ in the average case
 in the worst case
     File: 107-quick_sort_hoare.c, 107-O
 
-> Dealer
+> Dealer:
     Write a function that sorts a deck of cards.
 Prototype: void sort_deck(deck_node_t **deck);
 You are allowed to use the C standard library function qsort
