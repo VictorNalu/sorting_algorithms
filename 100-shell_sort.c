@@ -16,7 +16,7 @@ void shell_sort(int *array, size_t size)
 	/* Find the maximum interval (Knuth sequence: 1, 4, 13, 40, 121, ...)*/
 	while (interval < size / 3)
 	{
-		interval = interval * 3 + 1;
+		interval = (interval * 3) + 1;
 	}
 
 	/* Start with the largest interval, then reduce the interval */
