@@ -86,7 +86,7 @@ void cocktail_sort_list(listint_t **list)
 {
 	listint_t *start, *end, *current;
 	int swapped;
-	
+
 	if (list == NULL || *list == NULL)
 		return;
 
@@ -104,5 +104,5 @@ void cocktail_sort_list(listint_t **list)
 		end = current;
 		swapped |= backward_pass(list, current, start);
 
-	} while (swapped);
+	}while (swapped);
 }
