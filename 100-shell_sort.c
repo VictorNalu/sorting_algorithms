@@ -10,6 +10,9 @@ void shell_sort(int *array, size_t size)
 	size_t interval = 1, i, j;
 	int temp;
 
+	if (array == NULL || size < 2)
+		return;
+
 	/* Find the maximum interval (Knuth sequence: 1, 4, 13, 40, 121, ...)*/
 	while (interval < size / 3)
 	{
