@@ -20,7 +20,7 @@ void shell_sort(int *array, size_t size)
 	}
 
 	/* Start with the largest interval, then reduce the interval */
-	while (interval > 0)
+	while (interval >= 1)
 	{
 		/* Perform insertion sort with the current interval */
 		for (i = interval; i < size; i++)
