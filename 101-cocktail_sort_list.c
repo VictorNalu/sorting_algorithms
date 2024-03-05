@@ -1,108 +1,74 @@
-#include <stdio.h>
 #include "sort.h"
 
 /**
-* swap_nodes - Swaps two nodes in a doubly linked list
-* @list: Pointer to the pointer to the head of the list
-* @current: Current node
+* swap_nodes - Swaps a node with its previous node in a doubly linked list
+* @current: Node to swap
+* @list: Pointer to the head of the list
+* Return: Pointer to the node after swapping
 */
-void swap_nodes(listint_t **list, listint_t *current)
+listint_t *swap_nodes(listint_t *current, listint_t **list)
 {
-	if (current->prev)
-		current->prev->next = current->next;
+	listint_t *prev = current->prev;
+	listint_t *temp = current;
+
+	prev->next = temp->next;
+	if (temp->next)
+		temp->next->prev = prev;
+
+	temp->next = prev;
+	temp->prev = prev->prev;
+	prev->prev = temp;
+
+	if (temp->prev)
+		temp->prev->next = temp;
 	else
-		*list = current->next;
-	if (current->next)
-		current->next->prev = current->prev;
-	current->next = current->prev;
-	current->prev = current->prev->prev;
-	current->next->prev = current;
-	if (current->prev)
-		current->prev->next = current;
+		*list = temp;
+
+	return (temp);
 }
-/**
-* forward_pass - Executes one pass of forward
-* iteration of the cocktail shaker sort
-* @list: Pointer to the pointer to the head of the list
-* @current: Current node
-* @end: End node
-*
-* Return: 1 if elements were swapped, 0 otherwise
-*/
-int forward_pass(listint_t **list, listint_t *current, listint_t *end)
-{
-	int swapped = 0;
-
-	while (current->next != end)
-	{
-		if (current->n > current->next->n)
-		{
-			swap_nodes(list, current);
-			swapped = 1;
-			print_list(*list);
-		}
-		else
-			current = current->next;
-	}
-
-	return (swapped);
-}
-
-/**
-* backward_pass - Executes one pass of backward
-* iteration of the cocktail shaker sort
-* @list: Pointer to the pointer to the head of the list
-* @current: Current node
-* @start: Start node
-*
-* Return: 1 if elements were swapped, 0 otherwise
-*/
-int backward_pass(listint_t **list, listint_t *current, listint_t *start)
-{
-	int swapped = 0;
-
-	while (current->prev != start)
-	{
-		if (current->n < current->prev->n)
-		{
-			swap_nodes(list, current->prev);
-			swapped = 1;
-			print_list(*list);
-		}
-		else
-			current = current->prev;
-	}
-
-	return (swapped);
-}
-
 
 /**
 * cocktail_sort_list - Sorts a doubly linked list of integers
-* in ascending order using the Cocktail shaker sort algorithm.
-* @list: Pointer to the pointer to the head of the list
+* in ascending order using the Cocktail Shaker sort algorithm.
+* @list: Pointer to the head of the list
 */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *start, *end, *current;
-	int swapped;
-	
-	if (list == NULL || *list == NULL)
+	listint_t *node;
+	int swapped = 1;
+
+	if (!list || !(*list) || !((*list)->next))
 		return;
 
-	do {
+	node = *list;
+	while (swapped)
+	{
 		swapped = 0;
-		start = *list;
-		end = NULL;
-		current = start;
-
-		swapped |= forward_pass(list, current, end);
+		while (node->next)
+		{
+			if (node->n > node->next->n)
+			{
+				node = swap_nodes(node->next, list);
+				swapped = 1;
+				print_list(*list);
+			}
+			node = node->next;
+		}
 
 		if (!swapped)
 			break;
 
-		end = current;
-		swapped |= backward_pass(list, current, start);
-
-	} while (swapped);
+		swapped = 0;
+		while (node->prev)
+		{
+			if (node->n < node->prev->n)
+			{
+				node = swap_nodes(node, list);
+				swapped = 1;
+				print_list(*list);
+			}
+			else
+				node = node->prev;
+		}
+	}
 }
