@@ -174,3 +174,9 @@ From Ace to King
 From Spades to Diamonds
 See example below
     File: 1000-sort_deck.c, deck.h
+
+
+# AUTHORS
+Victor C. Onyebueke (VictorNalu)
+
+Pamela Chawira (Pam-123)
