@@ -1,6 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
-
 /**
 * shell_sort - function using Knuth sequence
 * integers in ascending order
