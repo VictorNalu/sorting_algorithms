@@ -14,6 +14,15 @@ __pycache__/
 100-main.c
 101-main.c
 
+# C-compiled files
+bubble
+insertion
+quick
+select
+cocktail
+shell
+output
+
 # Distribution / packaging
 .Python
 build/
