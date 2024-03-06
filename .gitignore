@@ -13,6 +13,8 @@ __pycache__/
 3-main.c
 100-main.c
 101-main.c
+102-main.c
+103-main.c
 
 # C-compiled files
 bubble
@@ -22,6 +24,8 @@ select
 cocktail
 shell
 output
+merge
+counting
 
 # Distribution / packaging
 .Python
